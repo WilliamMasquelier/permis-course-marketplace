@@ -1,0 +1,17 @@
+{
+  "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/.claude-plugin/marketplace-schema.json",
+  "name": "permis-course-marketplace",
+  "owner": { "name": "WilliamMasquelier" },
+  "plugins": [
+    {
+      "name": "permis-course",
+      "description": "Permis Côtier de Plaisance — AI tutor with Socratic teaching, FSRS spaced repetition, navigation scenarios, and mock exam. 21 sessions across 8 modules.",
+      "version": "0.2.0",
+      "author": "WilliamMasquelier",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/WilliamMasquelier/permis-course.git"
+      }
+    }
+  ]
+}
