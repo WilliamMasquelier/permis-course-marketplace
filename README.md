@@ -2,42 +2,62 @@
 
 Marketplace for the **Permis Côtier de Plaisance** AI tutor plugin.
 
-## Installing in Cowork
+---
 
-```bash
-# 1. Add this marketplace (one-time)
+## Option A — Utiliser dans Cowork (recommandé)
+
+Pas besoin de cloner quoi que ce soit. Ouvre Cowork et tape :
+
+```
 /plugin marketplace add WilliamMasquelier/permis-course-marketplace
-
-# 2. Install the plugin
 /plugin install permis-course
-
-# 3. Install Python dependencies
-cd ~/.claude/plugins/cache/permis-course
-uv sync
 ```
 
-After install, the following skills are available in every Cowork session:
-
-| Command | What it does |
-|---------|-------------|
-| `/permis-tutor` | Start a Socratic teaching session — reviews due flashcards, shows the lesson inline, teaches in French |
-| `/permis-scenario` | Branching coastal navigation scenario with COLREGs debrief |
-| `/permis-exam` | Full 40-question mock exam (pass threshold: 35/40) |
-| `/permis-render` | Re-render lesson HTML and run visual QA |
-| `/permis-setup` | Verify all prerequisites |
-| `/permis-author` | Teacher/author mode — edit lessons and wiki content |
-
-## Updating
+Puis installe les dépendances Python (une seule fois) :
 
 ```bash
+cd ~/.claude/plugins/cache/permis-course && bash install.sh
+```
+
+C'est tout. Lance `/permis-tutor` pour commencer.
+
+---
+
+## Option B — Cloner le repo localement
+
+Pour travailler directement depuis le repo (auteur ou développeur) :
+
+```bash
+git clone https://github.com/WilliamMasquelier/permis-course.git
+cd permis-course
+bash install.sh
+```
+
+Le script `install.sh` installe automatiquement `uv` et Python 3.13 si absents, crée le venv, et vérifie que tout fonctionne.
+
+Ouvre ensuite Claude Code dans le dossier `permis-course/`.
+
+---
+
+## Commandes disponibles
+
+| Commande | Ce que ça fait |
+|---------|-------------|
+| `/permis-tutor` | Session Socratique — révision des flashcards, leçon interactive en français |
+| `/permis-scenario` | Scénario de navigation côtière avec debriefing COLREGs |
+| `/permis-exam` | Examen blanc complet — 40 questions (seuil : 35/40) |
+| `/permis-render` | Re-générer les fichiers HTML et vérification visuelle |
+| `/permis-setup` | Vérifier l'installation |
+| `/permis-author` | Mode auteur — modifier leçons et notes wiki |
+
+## Mettre à jour
+
+```
 /plugin update permis-course
 ```
 
-## Prerequisites
-
-- Claude Code / Cowork v2.1.49+
-- Python 3.13+ with [uv](https://docs.astral.sh/uv/)
+Ou dans le repo local : `git pull`
 
 ## Source
 
-Plugin source: [WilliamMasquelier/permis-course](https://github.com/WilliamMasquelier/permis-course)
+Plugin : [WilliamMasquelier/permis-course](https://github.com/WilliamMasquelier/permis-course)
